@@ -25,11 +25,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class lucene 
+public class player 
 {
 	public static void main(String[] args) throws IOException, ParseException 
 	{
-
 		System.out.println("Enter absolute file path:");
 		String FILE_PATH = System.console().readLine();
 		
@@ -98,19 +97,16 @@ public class lucene
 
 	private static String proximityQueryFormat(String querystr) 
 	{
-		
 		StringTokenizer st = new StringTokenizer(querystr);
 		
-		String proxQuery = "";
-		
+		String proxQuery = "";		
 		proxQuery += "\"";					//delim
 		proxQuery += st.nextToken();				//first word
 		st.nextToken();						//skip over middle word
 		proxQuery += " " + st.nextToken();			//second word
 		proxQuery += "\"";					//delim
 		st.nextToken();						//skip over "WITHIN"
-		proxQuery += "~" + st.nextToken();
-		
+		proxQuery += "~" + st.nextToken();		
 		
 		return proxQuery;
 	}
