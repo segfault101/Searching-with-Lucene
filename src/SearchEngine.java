@@ -73,7 +73,7 @@ public class SearchEngine
 		IndexReader reader = DirectoryReader.open(index);
 		IndexSearcher searcher = new IndexSearcher(reader);
 
-		// CHANGED THE SIMILIARITY
+		//TODO: CHANGED THE SIMILARITY
 		searcher.setSimilarity(new BM25Similarity());
 
 		TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage, true);
